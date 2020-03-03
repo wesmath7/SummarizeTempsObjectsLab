@@ -26,15 +26,12 @@ namespace SummarizeTempsObjects
                 {
                     int threshold = GetInput("Enter the threshold temperature:");
 
-                    // TODO - print out the results
-
-                    /* Print the following results to the console:
-                     * Number of temperatures in the file
-                     * Number of temperatures above the provided threshold 
-                     * Number of temperatures below the provided threshold 
-                     * Number of temperatures at the provided threshold 
-                     * The average of the temperatures
-                     */
+                    // print the results
+                    WriteResult("Total temperatures", engine.NumberOfTemperatures());
+                    WriteResult("Temperatures above the threshold", engine.TempsAboveThreshold(threshold));
+                    WriteResult("Temperatures below the threshold", engine.TempsBelowThreshold(threshold));
+                    WriteResult("Temperatures at the threshold", engine.TempsAtThreshold(threshold));
+                    WriteResult("Average temperature", engine.AverageTemperature());
 
                     // check to see if use wants to test another threshold
                     int quit = GetInput("Enter 0 to quit or 1 to continue");

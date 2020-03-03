@@ -19,7 +19,21 @@ namespace SummarizeTempsObjects
 
         public void LoadTemperatureData()
         {
-            // add logic here to load the data from the file
+            if (File.Exists(_filePath))
+            {
+                using (StreamReader sr = File.OpenText(_filePath))
+                {
+                    string line;
+                    while ((line = sr.ReadLine()) != null)
+                    {
+                        // convert the string temp to an int
+                        int temp = int.Parse(line);
+
+                        // add to the ArrayList
+                        Temperatures.Add(temp);
+                    }
+                }
+            }
         }
     }
 }

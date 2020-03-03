@@ -351,3 +351,7 @@ MigrationBackup/
 
 # Mac hidden files
 .DS_STORE
+
+# Rider
+*.iml
+.idea/
